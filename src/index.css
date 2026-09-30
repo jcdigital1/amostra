@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --color-bg-deep: #050505;
+    --color-bg-card: #0C0C0C;
+    --color-orange-vibrant: #FF6500;
+    --color-orange-warm: #FF8A00;
+    --color-gray-subtle: #A9A9A9;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: #050505;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Stable tactile buttons */
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  will-change: transform;
+}
+
+.btn-premium:active {
+  transform: translateY(2px) scale(0.99);
+}
+
+/* Clean Editorial Card Depth */
+.card-editorial {
+  background: #0C0C0C;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
+.card-editorial:hover {
+  border-color: rgba(255, 101, 0, 0.35);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.95), 0 0 20px -5px rgba(255, 101, 0, 0.15);
+}
+
+/* Smooth Horizontal Carousel Scrollbar Hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
